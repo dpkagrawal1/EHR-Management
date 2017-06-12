@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+body {font-family: "Lato", sans-serif;
+	background-color: #a1e7f4;}
+
+/* Style the tab */
+div.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #888989;
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 5px solid #ccc;
+    border-top: none;
+}
+
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 2px solid #cecece;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #cecece;
+}
+.button {
+    width: 100px;
+    height: 30px;
+    background-color: #DBF4F3;
+    border: solid 1px #000;
+    font-size: 14px;
+    text-transform: none;
+    border-radius: 10px
+}
+</style>
+</head>
+<body>
+
+<div class="tab">
+  <button class="tablinks" onclick="openTab(event, 'PatientsTreated')">Patients Treated</button>
+  <button class="tablinks" onclick="openTab(event, 'CurrentSchedule')">Current Schedule</button>
+  <button class="tablinks" onclick="openTab(event, 'Profile')">Profile</button>
+</div>
+
+<div id="PatientsTreated" class="tabcontent">
+  <table>
+  <tr>
+    <th>Patient Name</th>
+    <th>Patient ID</th>
+    <th>Last appointment</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>1</td>
+    <td>07-01-2015</td>
+  </tr>
+  <tr>
+    <td>Centro comercial Moctezuma</td>
+    <td>2</td>
+    <td>05-05-2016</td>
+  </tr>
+  <tr>
+    <td>Ernst Handel</td>
+    <td>3</td>
+    <td>07-03-2015</td>
+  </tr>
+  <tr>
+    <td>Island Trading</td>
+    <td>4</td>
+    <td>01-05-2017</td>
+  </tr>
+  <tr>
+    <td>Laughing Bacchus Winecellars</td>
+    <td>5</td>
+    <td>08-02-2016</td>
+  </tr>
+  <tr>
+    <td>Magazzini Alimentari Riuniti</td>
+    <td>6</td>
+    <td>07-07-2016</td>
+  </tr>
+  </table>
+</div>
+
+<div id="CurrentSchedule" class="tabcontent">
+  <table>
+  <tr>
+    <th>Patient Name</th>
+    <th>Patient ID</th>
+    <th>Next appointment</th>
+    <th>Prescription</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>1</td>
+    <td>07-01-2017</td>
+    <td><button class="button" name="prescribe1">Prescribe</button></td>
+  </tr>
+  <tr>
+    <td>Centro comercial Moctezuma</td>
+    <td>2</td>
+    <td>07-05-2017</td>
+    <td><button class="button" name="prescribe2">Prescribe</button></td>
+  </tr>
+  <tr>
+    <td>Ernst Handel</td>
+    <td>3</td>
+    <td>07-03-2017</td>
+    <td><button class="button" name="prescribe3">Prescribe</button></td>
+  </tr>
+  <tr>
+    <td>Island Trading</td>
+    <td>4</td>
+    <td>08-05-2017</td>
+    <td><button class="button" name="prescribe4">Prescribe</button></td>
+  </tr>
+  <tr>
+    <td>Laughing Bacchus Winecellars</td>
+    <td>5</td>
+    <td>08-02-2017</td>
+    <td><button class="button" name="prescribe5">Prescribe</button></td>
+  </tr>
+  <tr>
+    <td>Magazzini Alimentari Riuniti</td>
+    <td>6</td>
+    <td>07-07-2017</td>
+    <td><button class="button" name="prescribe6">Prescribe</button></td>
+  </tr>
+  </table>
+</div>
+
+<div id="Profile" class="tabcontent">
+  <div class="container">
+  <form>
+      <table width:="50%">
+          <tbody>
+              <tr>
+                  <td>Doctor ID : <br>
+                  </td>
+                  <td><input name="id" type="text"><br>
+                      </td>
+              </tr>
+              <tr>
+                  <td>Full Name : <br>
+                  </td>
+                  <td><input name="name" type="text"><br>
+                      </td>
+              </tr>
+              <tr>
+                  <td>Age : <br>
+                  </td>
+                  <td><input name="age" type="text"><br>
+                      </td>
+              </tr>
+              <tr>
+                  <td>Gender : <br>
+                  </td>
+                  <td><input name="gender" type="text"><br>
+                      </td>
+              </tr>
+              <tr>
+                  <td>Specialization : <br>
+                  </td>
+                  <td><input name="occupation" type="text"><br>
+                      </td>
+              </tr>
+              <tr>
+                  <td>Contact Number :<br>
+                  </td>
+                  <td><input name="mobile" type="text"><br>
+                      </td>
+              </tr>
+              <tr>
+                  <td>Address :<br>
+                  </td>
+                  <td><textarea cols="30" rows="3" name="address"></textarea> </td>
+              </tr>
+          </tbody>
+      </table>
+  </form>
+</div>
+</div>
+
+<script>
+function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
+     
+</body>
+</html> 
